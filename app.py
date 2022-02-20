@@ -5,7 +5,7 @@ import plotly_express as px
 df = pd.read_csv("club_soccer_rankings.csv")
 
 #filter data frame for the top 25 teams by average rating
-df.loc[df.team.isin(df.groupby(['team']).agg({'rating':'mean'}).reset_index().sort_values('rating',ascending=False).head(25)['team'].tolist())]
+df=df.loc[df.team.isin(df.groupby(['team']).agg({'rating':'mean'}).reset_index().sort_values('rating',ascending=False).head(25)['team'].tolist())]
 
 
 st.title("FiveThirtyEight Global Club Soccer Rankings Over Time")
