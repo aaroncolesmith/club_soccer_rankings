@@ -7,7 +7,8 @@ df=pd.read_csv('club_soccer_rankings.csv')
 st.title('FiveThirtyEight Global Club Soccer Rankings Over Time')
 st.markdown('[Data Credit: FiveThirtyEight Global Club Soccer Rankings](https://projects.fivethirtyeight.com/soccer-predictions/global-club-rankings/)')
 
-px.scatter(df,
+fig=px.scatter(df,
     x='date',
     y='rating',
     color='team')
+st.plotly_chart(fig, use_container_width=True)
